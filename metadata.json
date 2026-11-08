@@ -1,0 +1,6 @@
+{
+  "name": "Chatwork Guardian Bot - ブラックリスト&自動BAN管理",
+  "description": "Render対応のChatworkブラックリスト＆強制退室bot。/blacklistコマンドや再入室の自動BAN・拒否機能、データベース永続化、管理コンソールを備えたセキュリティbotです。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

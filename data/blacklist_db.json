@@ -1,0 +1,126 @@
+{
+  "blacklist": [
+    {
+      "id": "ban_1794139549284_gen6u",
+      "account_id": "999999",
+      "chatwork_id": "",
+      "name": "User #999999",
+      "reason": "全ルーム荒らし",
+      "room_id": "10001",
+      "added_by": "111111",
+      "status": "revoked",
+      "auto_reject_count": 0,
+      "created_at": "2026-11-08T12:05:49.284Z",
+      "updated_at": "2026-11-08T12:05:58.532Z"
+    },
+    {
+      "id": "ban_sample_1",
+      "account_id": "9988123",
+      "chatwork_id": "spammer_bot_01",
+      "name": "悪質宣伝BOT",
+      "reason": "自動URL連投・荒らし行為",
+      "room_id": "GLOBAL",
+      "added_by": "ADMIN",
+      "status": "revoked",
+      "auto_reject_count": 3,
+      "created_at": "2026-11-06T10:37:23.282Z",
+      "updated_at": "2026-11-08T10:37:47.188Z",
+      "last_attempt_at": "2026-11-08T06:37:23.283Z"
+    },
+    {
+      "id": "ban_sample_2",
+      "account_id": "8877456",
+      "chatwork_id": "troll_user",
+      "name": "迷惑勧誘アカウント",
+      "reason": "未承諾DM送信および暴言",
+      "room_id": "GLOBAL",
+      "added_by": "ADMIN",
+      "status": "active",
+      "auto_reject_count": 1,
+      "created_at": "2026-11-07T10:37:23.283Z",
+      "updated_at": "2026-11-08T10:37:23.283Z",
+      "last_attempt_at": "2026-11-07T22:37:23.283Z"
+    }
+  ],
+  "logs": [
+    {
+      "id": "log_1794139558533_3d70",
+      "account_id": "999999",
+      "room_id": "10001",
+      "action": "MANUAL_UNBAN",
+      "details": "ユーザー ID: 999999 のブラックリスト登録を解除しました (/del-blacklist 実行者: 111111)",
+      "timestamp": "2026-11-08T12:05:58.533Z"
+    },
+    {
+      "id": "log_1794139549285_esmt",
+      "account_id": "999999",
+      "room_id": "10001",
+      "user_name": "User #999999",
+      "action": "COMMAND_BAN",
+      "details": "/blacklist コマンドにより登録 (実行管理者: 111111)。当ルーム退室: 在室なし、他参加ルーム退室: 0部屋",
+      "timestamp": "2026-11-08T12:05:49.285Z"
+    },
+    {
+      "id": "log_1794139089119_gzqa",
+      "account_id": "SYSTEM",
+      "room_id": "10001",
+      "action": "TIMELINE_FLUSH",
+      "details": "絵文字スパム等の重延防止のためメッセージ「a」を50件送信し、タイムラインを流しました (50件到達後に停止)。",
+      "timestamp": "2026-11-08T11:58:09.119Z"
+    },
+    {
+      "id": "log_1794139087822_806e",
+      "account_id": "776655",
+      "room_id": "10001",
+      "user_name": "連投荒らし",
+      "action": "EMOJI_SPAM_READONLY",
+      "details": "絵文字の5個以上連続投稿を検知 (5個: \"(bow)(bow)(bow)(bow)(bow)\")。ルーム権限を【閲覧のみ】に変更しました。",
+      "timestamp": "2026-11-08T11:58:07.822Z"
+    },
+    {
+      "id": "log_1794134267188_i03u",
+      "account_id": "9988123",
+      "room_id": "10001",
+      "action": "MANUAL_UNBAN",
+      "details": "ユーザー ID: 9988123 のブラックリスト登録を解除しました (/del-blacklist 実行者: 111111)",
+      "timestamp": "2026-11-08T10:37:47.188Z"
+    },
+    {
+      "id": "log_1794134260802_izf6",
+      "account_id": "8899001",
+      "room_id": "10001",
+      "user_name": "迷惑連投者",
+      "action": "EMOJI_SPAM_READONLY",
+      "details": "絵文字の5個以上連続投稿を検知 (5個: \"(bow)(bow)(bow)(bow)(bow)\")。ルーム権限を【閲覧のみ】に変更しました。",
+      "timestamp": "2026-11-08T10:37:40.802Z"
+    },
+    {
+      "id": "log_seed_1",
+      "account_id": "9988123",
+      "room_id": "GLOBAL",
+      "user_name": "悪質宣伝BOT",
+      "action": "COMMAND_BAN",
+      "details": "コマンド /blacklist 9988123 によりブラックリスト登録 & 強制退室実行",
+      "timestamp": "2026-11-06T10:37:23.283Z"
+    },
+    {
+      "id": "log_seed_2",
+      "account_id": "9988123",
+      "room_id": "12345678",
+      "user_name": "悪質宣伝BOT",
+      "action": "AUTO_REJECT_REENTRY",
+      "details": "ブラックリスト対象ユーザーの再入室試行を検知し、自動で強制退室・拒否しました",
+      "timestamp": "2026-11-08T06:37:23.283Z"
+    }
+  ],
+  "config": {
+    "api_token": "",
+    "webhook_token": "",
+    "monitored_rooms": [],
+    "auto_kick_enabled": true,
+    "auto_reject_enabled": true,
+    "notify_in_chat": true,
+    "polling_interval_seconds": 20,
+    "admin_account_ids": []
+  }
+}

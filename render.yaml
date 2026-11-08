@@ -1,0 +1,38 @@
+# Render Blueprint Specification for Chatwork Guardian Bot
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: chatwork-guardian-bot
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: singapore # or oregon, frankfurt, ohio
+    healthCheckPath: /api/status
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: CHATWORK_API_TOKEN
+        sync: false # Set in Render Dashboard -> Environment
+      - key: CHATWORK_WEBHOOK_TOKEN
+        sync: false # Set in Render Dashboard -> Environment
+      - key: CHATWORK_ROOM_ID
+        sync: false # Set in Render Dashboard -> Environment
+      - key: AUTO_KICK_ENABLED
+        value: "true"
+      - key: AUTO_REJECT_ENABLED
+        value: "true"
+      - key: POLLING_INTERVAL_SECONDS
+        value: "20"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: chatwork-guardian-db
+          property: connectionString
+
+databases:
+  - name: chatwork-guardian-db
+    plan: free
+    region: singapore
+    databaseName: chatwork_bot
+    user: bot_user
