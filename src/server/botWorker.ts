@@ -65,7 +65,7 @@ export class BotWorker {
           );
 
           if (config.notify_in_chat) {
-            const warningMsg = `[info][title]🛡️ ブラックリスト再参加拒否 & 強制退室[/title]ユーザー (ID: ${account_id}) はブラックリストに登録されているため、強制退室させました。\n累計拒否回数: ${count}回[/info]`;
+            const warningMsg = `[info][title]🛡️ ブラックリスト再参加拒否 & 強制退室[/title]対象ユーザー: [To:${account_id}][pname:${account_id}]\nブラックリストに登録されているため、強制退室させました。\n累計拒否回数: ${count}回[/info]`;
             await this.client.sendMessage(room_id, warningMsg);
           }
 
@@ -102,7 +102,7 @@ export class BotWorker {
         if (config.notify_in_chat) {
           const warningMsg =
             `[info][title]⚠️ 絵文字連続投稿検知 & 権限制限 (閲覧のみ)[/title]` +
-            `対象: ${targetUserName} (ID: ${account_id})\n` +
+            `対象ユーザー: [To:${account_id}][pname:${account_id}]\n` +
             `検知内容: 絵文字が5個以上連続で投稿されました (連続数: ${emojiCheck.count}個)\n` +
             `────────────────\n` +
             `荒らし・過度な連続リアクション防止ポリシーに基づき、アカウント権限を【閲覧のみ (Read Only)】に変更しました。\n` +
@@ -301,7 +301,7 @@ export class BotWorker {
 
     // 5. Send Confirmation Notification to Room
     let replyText = `[info][title]🚫 ブラックリスト登録 & 全ルームBAN完了[/title]`;
-    replyText += `対象ユーザー: ${targetUserName} (ID: ${targetAccountId})\n`;
+    replyText += `対象ユーザー: [To:${targetAccountId}][pname:${targetAccountId}]\n`;
     replyText += `登録理由: ${reason}\n`;
     replyText += `実行管理者: ${senderAccountId}\n`;
     replyText += `────────────────\n`;
@@ -354,7 +354,7 @@ export class BotWorker {
         action: 'MANUAL_UNBAN',
         details: `ユーザー ID: ${targetAccountId} のブラックリスト登録を解除しました (/del-blacklist 実行者: ${senderAccountId})`,
       });
-      replyText = `[info][title]✅ ブラックリスト解除完了[/title]ユーザー ID: ${targetAccountId} のブラックリスト登録を解除しました。(/del-blacklist 実行)\n今後はこのユーザーの入室・参加が許可されます。[/info]`;
+      replyText = `[info][title]✅ ブラックリスト解除完了[/title]対象ユーザー: [To:${targetAccountId}][pname:${targetAccountId}]\nブラックリスト登録を解除しました。(/del-blacklist 実行)\n今後はこのユーザーの入室・参加が許可されます。[/info]`;
     } else {
       replyText = `[info][title]ℹ️ ブラックリスト未登録[/title]ユーザー ID: ${targetAccountId} はアクティブなブラックリストに見つかりませんでした。[/info]`;
     }
@@ -377,7 +377,7 @@ export class BotWorker {
     const entry = await getBlacklistEntryByAccountId(targetAccountId);
     let reply = '';
     if (entry) {
-      reply = `[info][title]🚨 ブラックリスト該当[/title]ID: ${entry.account_id} (${entry.name || '名前未設定'})\n理由: ${entry.reason}\n登録日: ${new Date(entry.created_at).toLocaleString('ja-JP')}\n累計再参加拒否回数: ${entry.auto_reject_count}回\n状態: BAN対象（入室時は自動強制退室）[/info]`;
+      reply = `[info][title]🚨 ブラックリスト該当[/title]対象ユーザー: [To:${entry.account_id}][pname:${entry.account_id}]\n理由: ${entry.reason}\n登録日: ${new Date(entry.created_at).toLocaleString('ja-JP')}\n累計再参加拒否回数: ${entry.auto_reject_count}回\n状態: BAN対象（入室時は自動強制退室）[/info]`;
     } else {
       reply = `[info][title]🟢 安全 (未登録)[/title]ID: ${targetAccountId} はブラックリストに登録されていません。[/info]`;
     }
@@ -503,7 +503,7 @@ export class BotWorker {
               );
 
               if (config.notify_in_chat) {
-                const notifyMsg = `[info][title]🛡️ ブラックリスト再参加拒否 & 強制退室[/title]ブラックリスト対象「${member.name}」(ID: ${member.account_id}) の入室・再参加を検知したため、自動で拒否し強制退室させました。\n理由: ${blacklistEntry.reason}\n累計拒否回数: ${count}回[/info]`;
+                const notifyMsg = `[info][title]🛡️ ブラックリスト再参加拒否 & 強制退室[/title]対象ユーザー: [To:${member.account_id}][pname:${member.account_id}]\n入室・再参加を検知したため、自動で拒否し強制退室させました。\n理由: ${blacklistEntry.reason}\n累計拒否回数: ${count}回[/info]`;
                 await this.client.sendMessage(rid, notifyMsg);
               }
             }

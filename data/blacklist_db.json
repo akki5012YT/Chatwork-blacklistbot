@@ -1,6 +1,47 @@
 {
   "blacklist": [
     {
+      "id": "ban_1794183915132_17uqc",
+      "account_id": "999888",
+      "chatwork_id": "",
+      "name": "侵入試行者 #999888",
+      "reason": "シミュレーション用ブラックリスト登録",
+      "room_id": "10001",
+      "added_by": "SIMULATOR",
+      "status": "active",
+      "auto_reject_count": 1,
+      "created_at": "2026-11-09T00:25:15.132Z",
+      "updated_at": "2026-11-09T00:25:15.133Z",
+      "last_attempt_at": "2026-11-09T00:25:15.133Z"
+    },
+    {
+      "id": "ban_1794183907871_l75xx",
+      "account_id": "444444",
+      "chatwork_id": "",
+      "name": "User #444444",
+      "reason": "スパム行為",
+      "room_id": "10001",
+      "added_by": "111111",
+      "status": "revoked",
+      "auto_reject_count": 0,
+      "created_at": "2026-11-09T00:25:07.871Z",
+      "updated_at": "2026-11-09T00:25:11.584Z"
+    },
+    {
+      "id": "ban_1794183897045_qt8jp",
+      "account_id": "333333",
+      "chatwork_id": "",
+      "name": "User #333333",
+      "reason": "迷惑行為の連投",
+      "room_id": "10001",
+      "added_by": "111111",
+      "status": "active",
+      "auto_reject_count": 1,
+      "created_at": "2026-11-09T00:24:57.045Z",
+      "updated_at": "2026-11-09T00:25:11.837Z",
+      "last_attempt_at": "2026-11-09T00:25:11.837Z"
+    },
+    {
       "id": "ban_1794139549284_gen6u",
       "account_id": "999999",
       "chatwork_id": "",
@@ -43,6 +84,76 @@
     }
   ],
   "logs": [
+    {
+      "id": "log_1794183920168_mdkz",
+      "account_id": "SYSTEM",
+      "room_id": "10001",
+      "action": "TIMELINE_FLUSH",
+      "details": "絵文字スパム等の重延防止のためメッセージ「a」を50件送信し、タイムラインを流しました (50件到達後に停止)。",
+      "timestamp": "2026-11-09T00:25:20.168Z"
+    },
+    {
+      "id": "log_1794183918868_whhb",
+      "account_id": "555555",
+      "room_id": "10001",
+      "user_name": "連続投稿テストユーザー #555555",
+      "action": "EMOJI_SPAM_READONLY",
+      "details": "絵文字の5個以上連続投稿を検知 (5個: \"(bow)(bow)(bow)(bow)(bow)\")。ルーム権限を【閲覧のみ】に変更しました。",
+      "timestamp": "2026-11-09T00:25:18.868Z"
+    },
+    {
+      "id": "log_1794183915133_kmvv",
+      "account_id": "999888",
+      "room_id": "10001",
+      "user_name": "侵入試行者 #999888",
+      "action": "AUTO_REJECT_REENTRY",
+      "details": "再参加・在室スキャン検知: ブラックリスト対象「侵入試行者 #999888」(ID: 999888) を自動強制退室・拒否しました",
+      "timestamp": "2026-11-09T00:25:15.133Z"
+    },
+    {
+      "id": "log_1794183911838_qcnq",
+      "account_id": "333333",
+      "room_id": "10001",
+      "user_name": "User #333333",
+      "action": "AUTO_REJECT_REENTRY",
+      "details": "再参加・在室スキャン検知: ブラックリスト対象「一般参加メンバー B」(ID: 333333) を自動強制退室・拒否しました",
+      "timestamp": "2026-11-09T00:25:11.838Z"
+    },
+    {
+      "id": "log_1794183911585_yre0",
+      "account_id": "444444",
+      "room_id": "10001",
+      "action": "MANUAL_UNBAN",
+      "details": "ユーザー ID: 444444 のブラックリスト登録を解除しました (/del-blacklist 実行者: 111111)",
+      "timestamp": "2026-11-09T00:25:11.585Z"
+    },
+    {
+      "id": "log_1794183907872_zlhb",
+      "account_id": "444444",
+      "room_id": "10001",
+      "user_name": "User #444444",
+      "action": "COMMAND_BAN",
+      "details": "/blacklist コマンドにより登録 (実行管理者: 111111)。当ルーム退室: 在室なし、他参加ルーム退室: 1部屋",
+      "timestamp": "2026-11-09T00:25:07.872Z"
+    },
+    {
+      "id": "log_1794183907872_h0lo",
+      "account_id": "444444",
+      "room_id": "10002",
+      "user_name": "サポート利用者 C",
+      "action": "AUTO_KICK_JOIN",
+      "details": "全ルーム一括BAN: ルーム #10001 での登録に基づき、参加中ルーム「一般サポート・質問受付ルーム」(#10002) からも強制退室させました",
+      "timestamp": "2026-11-09T00:25:07.872Z"
+    },
+    {
+      "id": "log_1794183897047_5vb1",
+      "account_id": "333333",
+      "room_id": "10001",
+      "user_name": "一般参加メンバー B",
+      "action": "COMMAND_BAN",
+      "details": "/blacklist コマンドにより登録 (実行管理者: 111111)。当ルーム退室: 退室完了、他参加ルーム退室: 0部屋",
+      "timestamp": "2026-11-09T00:24:57.047Z"
+    },
     {
       "id": "log_1794139558533_3d70",
       "account_id": "999999",
